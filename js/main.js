@@ -1,5 +1,17 @@
 // JavaScript for GS Warriors quiz app
+
 $(document).ready(function(){
+//Start quiz
+// generate five random s
+// Generate five questions
+// Display questions based on number
+// Count how many are correct
+// Count how many are wrong
+// Show result when user clicks button
+// Show summary of results plus answers
+// play again button
+// generate five random numbers
+// rinse and repeat   
 
 // Event listener triggered when start quiz button is clicked
 document.getElementById("start-quiz").addEventListener("click", startQuiz);
@@ -46,7 +58,7 @@ var questions = [
   },
   {  
     question : "What city is that arena located in?",
-    answers  : [" San Francisco", " San Jose", " Oakland", " Hypertext Markup Language"],
+    answers  : [" San Francisco", " San Jose", " Oakland", " Silicon Valley"],
     correct  : " Oakland",
     image: "url"
   },
@@ -151,30 +163,52 @@ function startQuiz() {
   for(var i = 0; i < fiveNums.length; i++) {
     // set variable for the question  
     var question = questions[fiveNums[i]].question;
+      console.log(question);
     // assign an id in the dom for each question
-    var el = document.getElementById('question' + [i]);
-
-    console.log(question, el);
+    var ques = document.getElementById('question' + [i]);
     // display the question
-    el.textContent = [i + 1] + ': ' + question;
+    ques.textContent = [i + 1] + ': ' + question;
+
+    //Display the answer choices
+    // set variable for the answers, which is an array of 4 elements
+    var answers = questions[fiveNums[i]].answers
+      console.log(answers);  
+    // Loop through the answer array, display in radio button  
+    for(var j = 0; i < answers.length; j++){
+      var ans = document.getElementById('answer' + [j]);
+      console.log(ans);
+      console.log(answers[j]);
+      // ans[j].textContent = answers[j]
+    }
+    
   }  
 
+// function quizResult() {
+  // var correctAnswer = 0;
+  // var incorrectAnswer = 0;
+
+  // for(var i = 0; i < fiveNums.length; i++) {
+  //   var correct = questions[i].correct;
+  //   var userAnswer = document.getElementById('answer' + [i]).value;
+  //   var questionSpot = document.getElementById('question' + [i]);
+
+  //   if(answer == guess) {
+  //     questionSpot.className = 'correct';
+  //     correct++;
+  //   } else {
+  //     questionSpot.className = 'incorrect';
+  //     incorrect++;
+  //     };  
+  // };
+
+//   document.getElementById('correct').textContent = correct;
+//   document.getElementById('incorrect').textContent = incorrect;
+// }
 
 
 } //end of startQuiz function
 
 
 
-//Start quiz
-// generate five random s
-// Generate five questions
-// Display questions based on number
-// Count how many are correct
-// Count how many are wrong
-// Show result when user clicks button
-// Show summary of results plus answers
-// play again button
-// generate five random numbers
-// rinse and repeat 
 
 });
