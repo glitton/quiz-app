@@ -1,5 +1,9 @@
 /*Golden State Warriors Quiz App CSS*/
 
+body, html {
+  height: 100%;
+}
+
 .navbar {
   background-color: black;
   border-color: black;
@@ -31,13 +35,13 @@ body {
 }
 
 .strength {
-  margin-top: 70px;
+  margin-top: 130px;
 }
 
 .take-quiz {
   text-align: center;
   position: relative;
-  bottom: 30px;
+  bottom: 50px;
 }
 
 a:link {
@@ -48,7 +52,7 @@ a:link {
   background-color: #006BB6;
   border-color: #006BB6;
   color: white;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .quiz-btn:hover{
