@@ -3,7 +3,7 @@
 .navbar {
   background-color: black;
   border-color: black;
-  height: 70px;
+  height: 100px;
   margin-bottom: 0px;
 }
 
@@ -15,12 +15,14 @@
   position: relative;
   left: 308px;
   bottom: 90px;
-  color: #FFDF00;
+  color: #006BB6;
+  text-shadow: 2px 2px 2px #FDB927;
 }
 
 body {
   background-color: black;
   margin: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .main {
@@ -38,14 +40,24 @@ body {
   bottom: 30px;
 }
 
+a:link {
+  text-decoration: none;
+}
+
 .quiz-btn {
-  background-color: #FFDF00;
-  color: black;
+  background-color: #006BB6;
+  border-color: #006BB6;
+  color: white;
   font-size: 20px;
 }
 
+.quiz-btn:hover{
+  background-color: #FDB927;
+  border-color: #FDB927;
+  color: black;
+}
+
 .game-area {
-  background-color: lightblue;
   background-image: url(../img/gsw-fans.jpg);
 }
 
