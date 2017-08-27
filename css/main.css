@@ -8,13 +8,13 @@
 }
 
 .logo {
-  margin: 10px 0 10px 18px;
+  margin: 10px 0px 10px 152px;
 }
 
 .title {
   position: relative;
-  left: 262px;
-  bottom: 70px;
+  left: 308px;
+  bottom: 90px;
   color: #FFDF00;
 }
 
@@ -49,16 +49,17 @@ body {
   background-image: url(../img/gsw-fans.jpg);
 }
 
+
 .quiz-ques {
   width: 80%;
-  margin: 200px auto 100px auto;
+  margin: 100px auto 50px auto;
   text-align: center;
   color: white;
 }
 
 .quiz-ans {
   width: 80%;
-  margin: 50px auto;
+  margin: 150px auto;
   text-align: center;
   color: white;
 }
