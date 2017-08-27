@@ -42,19 +42,23 @@ body {
   background-color: #FFDF00;
   color: black;
   font-size: 20px;
-
 }
 
 .game-area {
   background-color: lightblue;
   background-image: url(../img/gsw-fans.jpg);
-
 }
 
-.quiz-ques,
+.quiz-ques {
+  width: 80%;
+  margin: 200px auto 100px auto;
+  text-align: center;
+  color: white;
+}
+
 .quiz-ans {
   width: 80%;
-  margin: 100px auto;
+  margin: 50px auto;
   text-align: center;
   color: white;
 }

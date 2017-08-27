@@ -3,40 +3,68 @@ $(document).ready(function(){
 // question and answer array of objects
 var questions = [
   {
-    question : "Who are the Warriors' top three point scorers of all time?",
+    question : " Who are the Warriors' top three point scorers of all time?",
     answers  : ["Steph Curry, Monta Ellis",  "Steph Curry, Klay Thompson",          "Chris Mullin, Mitch Richmond", "Steph Curry, Kevin Durant"],
-    correct  : "Steph Curry, Klay Thompson"
+    correct  : "Steph Curry, Klay Thompson",
+    image: "url"
   },
   {
-    question : "What is the paragraph tag used for?",
-    answers  : [" to create paragraph text on a CSS page", " to create heading text on a HTML page", " to create heading text on a CSS page", " to create paragraph text on a HTML page"],
-    correct  : " to create paragraph text on a HTML page"
+    question : " What are Steph Curry and Klay Thompson known as?",
+    answers  : [" The Terrible Two", " The Millenials", 
+                " Brothers in Arms", " The Splash Brothers"],
+    correct  : " The Splash Brothers",
+    image: "url"
   },
   {
-    question : "What are 3 ways to write CSS?",
-    answers  :  [" External Style Sheet, External Style Tag & Inline Style", " External Style Sheet, Internal Style Tag & Inline Style", " Inline Style Sheet, Internal Style Tag & Inline Style", " External Style Sheet, Internal Style Tag & Inline Style Sheet"],
-    correct  : " External Style Sheet, Internal Style Tag & Inline Style"
+    question : "What player left Oklahoma City to start his 'next chapter' with Golden State?",
+    answers  :  [" Andre Iguodala", " Kevin Durant", " Rick Barry", " Rod Strickland"],
+    correct  : " Kevin Durant",
+    image: "url"
   },
   {
-    question : "How to declare an HTML file type?",
-    answers  : [" <!CSS doctype>", " <!HTML doctype>", " <!DOCTYPE CSS>", " <!DOCTYPE html>"],
-    correct  : " <!DOCTYPE html>"
+    question : "What current Warriors player has 19 career triple-doubles?",
+    answers  : [" Draymond Green", " Shaun Livingston", " Klay Thompson", " Kevin Durant"],
+    correct  : " Draymond Green",
+    image: "url"
   },
   {
-    question : "Where in your HTML file do you link to your CSS file?",
-    answers  : [" What is CSS?", " In between the opening and closing head tags", " In between the opening and closing body tags", " In between the opening and closing heading tags"],
-    correct  : " In between the opening and closing head tags"
+    question : "What city did the Warriors play in from 1946-1962?",
+    answers  : [" San Francisco", " New York", " Philadelphia", " Oakland"],
+    correct  : " Philadelphia",
+    image: "url"
   },
   {
-    question : "How many different heading tags are there?",
-    answers  : [" 6", " 5", " 7", " 2"],
-    correct  :  " 6"
+    question : "What is the name of the Warriors' arena?",
+    answers  : [" Dub Nation", " At&T Park", " Oracle Arena", " HP Pavilion"],
+    correct  :  " Oracle Arena",
+    image: "url"
   },
   {
-    question : "What does CSS stand for?",
-    answers  : [" Cascading Smile Sheets", " Cascading Style Stuff", " Cascading Style Sheets", " Hypertext Markup Language"],
-    correct  : " Cascading Style Sheets"
-  }
+    question : "What city is that arena located in?",
+    answers  : [" San Francisco", " San Jose", " Oakland", " Hypertext Markup Language"],
+    correct  : " Oakland",
+    image: "url"
+  },
+  {
+    question : "Who is the coach of the 2016-2017 Warriors?",
+    answers  : [" Steve Kerr", " Mike Brown", " Don Nelson", " P.J. Carlisimo"],
+    correct  : " Steve Kerr",
+    image: "url"
+  },  
+  {
+    question : "Who filled in as interim coach during the 2015-16 season?",
+    answers  : [" Mike Brown", " Luke Walton", " Don Nelson", " Steve Kerr"],
+    correct  : " Luke Walton",
+    image: "url"
+  },
+  {
+    question : "Who filled in as interim coach during the 2015-16 season?",
+    answers  : [" Mike Brown", " Luke Walton", " Don Nelson", " Steve Kerr"],
+    correct  : " Luke Walton",
+    image: "url"
+  },     
+
+
 ];
 
 
