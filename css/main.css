@@ -62,7 +62,8 @@ a:link {
 }
 
 .game-area {
-  background-image: url(../img/gsw-fans.jpg);
+  background: url(../img/gsw-fans.jpg);
+  background-size: 100% 50%;
 }
 
 
@@ -76,6 +77,25 @@ a:link {
 .quiz-ans {
   width: 80%;
   margin: 150px auto;
+  text-align: center;
+  color: white;
+}
+
+.results-area {
+  background: url(../img/gsw.jpg);
+  background-size: 960px 540px;
+  background-repeat: no-repeat;
+}
+
+.see-results {
+  text-align: center;
+  position: relative;
+  /*bottom: 40px;*/
+}
+
+.results-summary {
+  width: 80%;
+  margin: 100px auto 50px auto;
   text-align: center;
   color: white;
 }

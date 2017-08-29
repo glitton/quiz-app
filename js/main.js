@@ -214,26 +214,18 @@ function startQuiz() {
       radio.value = answers[j];
       console.log(answers[j]);
       ans.appendChild(document.createTextNode(answers[j]));
-    }  
-
-    // http://jsfiddle.net/cmatskas/csQ5R/6/
-    // https://stackoverflow.com/questions/21174147/javascript-attempting-to-dynamically-add-radio-buttons-from-an-array
-    
-      // var ans; 
-      //   ans + [i] = document.getElementById('answer0' + [i]); 
-      //   console.log(ans+[i]);
-      // ans0.innerHTML = answers[0]; 
-    
+    }      
   }  
+  
+document.getElementById("see-results").addEventListener("click", quizResult);
+function quizResult() {
+  var correctAnswer = 0;
+  var incorrectAnswer = 0;
 
-// function quizResult() {
-  // var correctAnswer = 0;
-  // var incorrectAnswer = 0;
-
-  // for(var i = 0; i < fiveNums.length; i++) {
-  //   var correct = questions[i].correct;
-  //   var userAnswer = document.getElementById('answer' + [i]).value;
-  //   var questionSpot = document.getElementById('question' + [i]);
+  for(var i = 0; i < fiveNums.length; i++) {
+    var correct = questions[i].correct;
+    var userAnswer = document.getElementById('answer' + [i]).value;
+    var questionSpot = document.getElementById('question' + [i]);
 
   //   if(answer == guess) {
   //     questionSpot.className = 'correct';
@@ -249,9 +241,6 @@ function startQuiz() {
 // }
 
 
-} //end of startQuiz function
+  }//end of startQuiz function
 
-
-
-
-});
+});//end of document ready function
