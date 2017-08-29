@@ -35,13 +35,13 @@ body {
 }
 
 .strength {
-  margin-top: 130px;
+  margin-top: 110px;
 }
 
 .take-quiz {
   text-align: center;
   position: relative;
-  bottom: 50px;
+  bottom: 40px;
 }
 
 a:link {

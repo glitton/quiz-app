@@ -1,16 +1,13 @@
 // JavaScript for GS Warriors quiz app
 
 $(document).ready(function(){
-//Start quiz
-// generate five random s
-// Generate five questions
-// Display questions based on number
-// Count how many are correct
-// Count how many are wrong
-// Show result when user clicks button
-// Show summary of results plus answers
-// play again button
-// generate five random numbers
+// Start quiz
+// generate five random numbers which correspond to five questions
+// Choose the five questions based on its index and display them
+// Render answers via radio buttons
+// Count how many users got the correct and wrong ones 
+// Show results including right answers when user clicks results button
+// Allow user to play again 
 // rinse and repeat   
 
 // Event listener triggered when start quiz button is clicked
@@ -139,7 +136,37 @@ var questions = [
     answers  : [" Dallas Mavericks", " LA Lakers", " San Antonio Spurs", " Chicago Bulls"],
     correct  : " Dallas Maverics",
     image: "url"
-  }
+  },
+  { 
+    question : "Who scored a record-breaking xx points in one quarter against the Sacrmento Kings in the 2016-17 season? ",
+    answers  : [" Steph Curry", " Zaza Pachulia", " Klay Thompson", " Draymond Green"],
+    correct  : " Klay Thompson",
+    image: "url"
+  },
+  { 
+    question : "Who did the Warriors draft the year xx was the number one pick? ",
+    answers  : [" XX", " XX", " Klay Thompson", " Draymond Green"],
+    correct  : " Chris Webber",
+    image: "url"
+  },
+  { 
+    question : "Who did the Warriors draft the year xx was the number one pick? ",
+    answers  : [" XX", " XX", " Klay Thompson", " Draymond Green"],
+    correct  : " Chris Webber",
+    image: "url"
+  }, 
+  { 
+    question : "Who did the Warriors draft the year xx was the number one pick? ",
+    answers  : [" XX", " XX", " Klay Thompson", " Draymond Green"],
+    correct  : " Chris Webber",
+    image: "url"
+  }, 
+  { 
+    question : "What team did Steph Curry play for in the final four of the NCAA ...? ",
+    answers  : [" Kentucky", " Davidson", " Duke", " Stanford"],
+    correct  : " Davidson",
+    image: "url"
+  }        
 ];
   
   
@@ -159,6 +186,7 @@ function startQuiz() {
     fiveNums[fiveNums.length] = randomNum;
   }
   console.log(fiveNums);
+
   // loop over array and get question corresponding to number
   for(var i = 0; i < fiveNums.length; i++) {
     // set variable for the question  
@@ -166,20 +194,35 @@ function startQuiz() {
       console.log(question);
     // assign an id in the dom for each question
     var ques = document.getElementById('question' + [i]);
-    // display the question
+    // display the question, preface with 
+    // number 1 and colon, 2 colon, etc ... this is what [i + 1] is for
     ques.textContent = [i + 1] + ': ' + question;
 
-    //Display the answer choices
-    // set variable for the answers, which is an array of 4 elements
+    //Display the answers as multiple radio buttons
+    //set variable for the answers, which is an array of 4 elements
     var answers = questions[fiveNums[i]].answers
-      console.log(answers);  
-    // Loop through the answer array, display in radio button  
-    for(var j = 0; i < answers.length; j++){
-      var ans = document.getElementById('answer' + [j]);
-      console.log(ans);
+      console.log(answers + ' this is the answers array'); 
+
+    // create a loop and assign the answers to radio buttons
+    for(var j = 0; j < 4; j++){
+      // assign a variable to each answer in the array
+      var ans = document.getElementById('answer' + [i] + [j]);
+      var radio = document.getElementById('radio' + [i] + [j]) 
+      console.log(i + ' this is index i ' + j + ' this is index j');
+      console.log(ans + ' answer goes here');  
+      console.log(radio + ' radio buttons');
+      radio.value = answers[j];
       console.log(answers[j]);
-      // ans[j].textContent = answers[j]
-    }
+      ans.appendChild(document.createTextNode(answers[j]));
+    }  
+
+    // http://jsfiddle.net/cmatskas/csQ5R/6/
+    // https://stackoverflow.com/questions/21174147/javascript-attempting-to-dynamically-add-radio-buttons-from-an-array
+    
+      // var ans; 
+      //   ans + [i] = document.getElementById('answer0' + [i]); 
+      //   console.log(ans+[i]);
+      // ans0.innerHTML = answers[0]; 
     
   }  
 
