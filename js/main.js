@@ -17,14 +17,14 @@ document.getElementById("start-quiz").addEventListener("click", startQuiz);
 // from https://www.jetpunk.com/user-quizzes/23532/golden-state-warriors-trivia
 var questions = [
   { 
-    question : " Who are the two leading three-point shooter in Warriors history?",
+    question : " Who are the two leading three-point shooters in Warriors history?",
     answers  : ["Steph Curry, Monta Ellis",  "Steph Curry, Klay Thompson",          "Chris Mullin, Mitch Richmond", "Steph Curry, Kevin Durant"],
     correct  : "Steph Curry, Klay Thompson",
     image: "url"
   },
   { 
     question : " What are Steph Curry and Klay Thompson known as?",
-    answers  : [" The Terrible Two", " The Millenials", 
+    answers  : [" The Swish Brothers", " The Blues Brothers", 
                 " Brothers in Arms", " The Splash Brothers"],
     correct  : " The Splash Brothers",
     image: "url"
@@ -36,7 +36,7 @@ var questions = [
     image: "url"
   },
   { 
-    question : "What current Warriors player has 19 career triple-doubles?",
+    question : "What current Warriors player (2017) has 19 career triple-doubles?",
     answers  : [" Draymond Green", " Shaun Livingston", " Klay Thompson", " Kevin Durant"],
     correct  : " Draymond Green",
     image: "url"
@@ -48,13 +48,13 @@ var questions = [
     image: "url"
   },
   {  
-    question : "What is the name of the Warriors' arena?",
+    question : "What is the name of the Warriors' arena (2016-17)?",
     answers  : [" Dub Nation", " At&T Park", " Oracle Arena", " HP Pavilion"],
     correct  :  " Oracle Arena",
     image: "url"
   },
   {  
-    question : "What city is that arena located in?",
+    question : "What city is the Warriors arena located in (as of 2016-17)?",
     answers  : [" San Francisco", " San Jose", " Oakland", " Silicon Valley"],
     correct  : " Oakland",
     image: "url"
@@ -121,8 +121,8 @@ var questions = [
   },
   { 
     question : "Who wasn't on the 'We Believe' team?",
-    answers  : [" Baron Davis", " Popeye Jones", " Jason Richardson", " Monta Ellis"],
-    correct  : " Popeye Jones",
+    answers  : [" Baron Davis", " Gilbert Arenas", " Jason Richardson", " Monta Ellis"],
+    correct  : " Gilbert Arenas",
     image: "url"
   },
   { 
@@ -138,38 +138,37 @@ var questions = [
     image: "url"
   },
   { 
-    question : "Who scored a record-breaking xx points in one quarter against the Sacrmento Kings in the 2016-17 season? ",
+    question : "Who has the record for most points in a quarter (as of 2016-17)? ",
     answers  : [" Steph Curry", " Zaza Pachulia", " Klay Thompson", " Draymond Green"],
     correct  : " Klay Thompson",
     image: "url"
   },
   { 
-    question : "Who did the Warriors draft the year xx was the number one pick? ",
-    answers  : [" XX", " XX", " Klay Thompson", " Draymond Green"],
-    correct  : " Chris Webber",
+    question : "Who was the player that the Warriors traded Robert Parish for in 1980? ",
+    answers  : [" Kevin McHale", " Joe Barry Carrol", " Ralph Sampson", " Draymond Green"],
+    correct  : " Joe Barry Carrol",
     image: "url"
   },
   { 
-    question : "Who did the Warriors draft the year xx was the number one pick? ",
-    answers  : [" XX", " XX", " Klay Thompson", " Draymond Green"],
-    correct  : " Chris Webber",
+    question : "During 2006-07, Don Nelson replaced which Golden State Warriors coach? ",
+    answers  : [" Dave Cowens", " Brian Winters", " Mike Montgomery", " Eric Musselman"],
+    correct  : " Mike Montgomery",
     image: "url"
   }, 
   { 
-    question : "Who did the Warriors draft the year xx was the number one pick? ",
-    answers  : [" XX", " XX", " Klay Thompson", " Draymond Green"],
-    correct  : " Chris Webber",
+    question : "Which bridge is prominently displayed in the Warriors logo? ",
+    answers  : [" Bay Bridge", " Golden Gate Bridge", " Carquinez Bridge", " London Bridge"],
+    correct  : " Bay Bridge",
     image: "url"
   }, 
   { 
-    question : "What team did Steph Curry play for in the final four of the NCAA ...? ",
-    answers  : [" Kentucky", " Davidson", " Duke", " Stanford"],
-    correct  : " Davidson",
+    question : "Who is the player that was born in the same hospital and delivered by the same doctor as Steph Curry? ",
+    answers  : [" Charles Barkley", " Isiah Thomas", " Chris Paul", " LeBron James"],
+    correct  : " LeBron James",
     image: "url"
   }        
-];
-  
-  
+]; //end of questions object
+
   // Random number generator to generate 5 questions
   // Each number corresponds to a specific question
   function startQuiz() {
@@ -179,7 +178,7 @@ var questions = [
     // Do a while loop and keep going while the length of 
     //the array is less than 5
     while(fiveNums.length < 5) {
-      var randomNum = Math.floor(Math.random() * 20);
+      var randomNum = Math.floor(Math.random() * 25);
       // if the number is not in the array, keep generating random nums
       if(fiveNums.indexOf(randomNum) > -1 ) continue; //revisit this, I think if -1, means number isn't in the array
       // add the unique number to the array
@@ -242,4 +241,13 @@ var questions = [
       } //end of j for loop
     } //end of i for loop
   }//end of startQuiz function
+
+  // Play again function
+  document.getElementById("play-again").addEventListener("click", playAgain);
+
+  function playAgain(){
+    document.location.reload(true);
+    console.log('play new game');
+  }
+
 });//end of document ready function
