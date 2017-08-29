@@ -172,75 +172,74 @@ var questions = [
   
   // Random number generator to generate 5 questions
   // Each number corresponds to a specific question
-function startQuiz() {
-  // Initiate an empty array
-  var fiveNums = [];
-  // Want to generate 5 unique numbers to get 5 different questions
-  // Do a while loop and keep going while the length of 
-  //the array is less than 5
-  while(fiveNums.length < 5) {
-    var randomNum = Math.floor(Math.random() * 20);
-    // if the number is not in the array, keep generating random nums
-    if(fiveNums.indexOf(randomNum) > -1 ) continue; //revisit this, I think if -1, means number isn't in the array
-    // add the unique number to the array
-    fiveNums[fiveNums.length] = randomNum;
-  }
-  console.log(fiveNums);
+  function startQuiz() {
+    // Initiate an empty array
+    var fiveNums = [];
+    // Want to generate 5 unique numbers to get 5 different questions
+    // Do a while loop and keep going while the length of 
+    //the array is less than 5
+    while(fiveNums.length < 5) {
+      var randomNum = Math.floor(Math.random() * 20);
+      // if the number is not in the array, keep generating random nums
+      if(fiveNums.indexOf(randomNum) > -1 ) continue; //revisit this, I think if -1, means number isn't in the array
+      // add the unique number to the array
+      fiveNums[fiveNums.length] = randomNum;
+    }
+    console.log(fiveNums);
 
-  // loop over array and get question corresponding to number
-  for(var i = 0; i < fiveNums.length; i++) {
-    // set variable for the question  
-    var question = questions[fiveNums[i]].question;
-      console.log(question);
-    // assign an id in the dom for each question
-    var ques = document.getElementById('question' + [i]);
-    // display the question, preface with 
-    // number 1 and colon, 2 colon, etc ... this is what [i + 1] is for
-    ques.textContent = [i + 1] + ': ' + question;
+    // loop over array and get question corresponding to number
+    for(var i = 0; i < fiveNums.length; i++) {
+      // set variable for the question  
+      var question = questions[fiveNums[i]].question;
+        console.log(question);
+      // assign an id in the dom for each question
+      var ques = document.getElementById('question' + [i]);
+      // display the question, preface with 
+      // number 1 and colon, 2 colon, etc ... this is what [i + 1] is for
+      ques.textContent = [i + 1] + ': ' + question;
 
-    //Display the answers as multiple radio buttons
-    //set variable for the answers, which is an array of 4 elements
-    var answers = questions[fiveNums[i]].answers
-      console.log(answers + ' this is the answers array'); 
+      //Display the answers as multiple radio buttons
+      //set variable for the answers, which is an array of 4 elements
+      var answers = questions[fiveNums[i]].answers;
+        console.log(answers + ' this is the answers array'); 
 
-    // create a loop and assign the answers to radio buttons
-    for(var j = 0; j < 4; j++){
-      // assign a variable to each answer in the array
-      var ans = document.getElementById('answer' + [i] + [j]);
-      var radio = document.getElementById('radio' + [i] + [j]) 
-      console.log(i + ' this is index i ' + j + ' this is index j');
-      console.log(ans + ' answer goes here');  
-      console.log(radio + ' radio buttons');
-      radio.value = answers[j];
-      console.log(answers[j]);
-      ans.appendChild(document.createTextNode(answers[j]));
-    }      
-  }  
-  
-document.getElementById("see-results").addEventListener("click", quizResult);
-function quizResult() {
-  var correctAnswer = 0;
-  var incorrectAnswer = 0;
+      // create a loop within the other for loop in line 190
+      // and assign the answers to radio buttons
+      for(var j = 0; j < 4; j++){
+        // assign a variable to each answer in the array
+        var ans = document.getElementById('answer' + [i] + [j]);
+        var radio = document.getElementById('radio' + [i] + [j]); 
+        console.log(i + ' this is index i ' + j + ' this is index j');
+        console.log(ans + ' answer goes here');  
+        console.log(radio + ' radio buttons');
+        radio.value = answers[j];
+        console.log(answers[j]);
+        ans.appendChild(document.createTextNode(answers[j]));
 
-  for(var i = 0; i < fiveNums.length; i++) {
-    var correct = questions[i].correct;
-    var userAnswer = document.getElementById('answer' + [i]).value;
-    var questionSpot = document.getElementById('question' + [i]);
-
-  //   if(answer == guess) {
-  //     questionSpot.className = 'correct';
-  //     correct++;
-  //   } else {
-  //     questionSpot.className = 'incorrect';
-  //     incorrect++;
-  //     };  
-  // };
-
-//   document.getElementById('correct').textContent = correct;
-//   document.getElementById('incorrect').textContent = incorrect;
-// }
-
-
+      // When user clicks on Check Results button, the function below happens  
+      // document.getElementById("see-results").addEventListener("click", quizResult);
+      //   function quizResult() {
+      //     var correctAnswer = 0;
+      //     var wrongAnswer = 0;
+      //     // Assign correct answer from the object to a variable
+      //     var correct = questions[i].correct;
+      //     for(var k = 0; k < 4; k++){
+      //     // Capture user's answer based on the radio button checked
+      //     //Based on https://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button
+      //       var userAnswer = $('input[type='radio'][name='answer[k]']:checked').val();
+      //       if(correctAnswer == userAnswer) {
+      //         correctAnswer++;
+      //         console.log(correctAnswer);
+      //       } else {
+      //         wrongAnswer++
+      //         console.log(wrongAnswer);
+      //       }
+      //     } //end of k for loop
+      //   document.getElementById('correct').textContent = correctAnswer;
+      //   document.getElementById('wrong').textContent = wrongAnswer;
+      //   document.getElementById('total').textContent = correctAnswer / wrongAnswer;
+      //   } //end of quizResult     
+      } //end of j for loop
+    } //end of i for loop
   }//end of startQuiz function
-
 });//end of document ready function
