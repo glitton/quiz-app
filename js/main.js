@@ -173,7 +173,7 @@ var questions = [
 
   // Random number generator to generate 5 questions
   // Each number corresponds to a specific question
-  function startQuiz() {
+
     // Initiate an empty array
     var fiveNums = [];
     // Want to generate 5 unique numbers to get 5 different questions
@@ -188,13 +188,14 @@ var questions = [
     }
     console.log(fiveNums);
 
+  function startQuiz() {
     // loop over array and get question corresponding to number
     for(var i = 0; i < fiveNums.length; i++) {
       // set variable for the question  
       var question = questions[fiveNums[i]].question;
         console.log(question);
       // assign an id in the dom for each question
-      var ques = document.getElementById('question' + [i]);
+      var ques = document.getElementById('question' + i);
       // display the question, preface with 
       // number 1 and colon, 2 colon, etc ... this is what [i + 1] is for
       ques.textContent = [i + 1] + ': ' + question;
@@ -206,15 +207,15 @@ var questions = [
 
       // create a loop within the other for loop in line 190
       // and assign the answers to radio buttons
-      for(var j = 0; j < 4; j++){
+      for(var j = 0; j < questions[fiveNums[i]].answers.length; j++){
         // assign a variable to each answer in the array
         var ans = document.getElementById('answer' + [i] + [j]);
         var radio = document.getElementById('radio' + [i] + [j]); 
-        console.log(i + ' this is index i ' + j + ' this is index j');
-        console.log(ans + ' answer goes here');  
-        console.log(radio + ' radio buttons');
+        // console.log(i + ' this is index i ' + j + ' this is index j');
+        // console.log(ans + ' answer goes here');  
+        // console.log(radio + ' radio buttons');
         radio.value = answers[j];
-        console.log(answers[j]);
+        // console.log(answers[j]);
         ans.appendChild(document.createTextNode(answers[j]));    
       } //end of j for loop
     } //end of i for loop
@@ -226,34 +227,35 @@ document.getElementById("see-results").addEventListener("click", quizResult);
     console.log('quiz result invoked');
     var correctAnswer = 0;
     var wrongAnswer = 0;
-    // Assign correct answer from the object to a variable
-    var correct = questions[i].correct;
-    console.log(correct);
+
 //     // Want to use the answers for the loop condition
 //     // var radio = document.getElementById('radio' + [i] + [j]); 
-//     for(var k = 0; k < 4; k++){
+    for(var i = 0; i < fiveNums.length; i++){
 //     // Capture user's answer based on the radio button checked
 // //     //Based on https://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button
-//       var userAnswer = $("input[name='answer[k]']:checked").val();
-//       if(correctAnswer == userAnswer) {
-//         correctAnswer++;
-//         console.log(correctAnswer);
-//       } else {
-//         wrongAnswer++
-//         console.log(wrongAnswer);
-//       }
-//     } //end of k for loop
-//   document.getElementById('correct').textContent = correctAnswer;
-//   document.getElementById('wrong').textContent = wrongAnswer;
-//   document.getElementById('total').textContent = correctAnswer / wrongAnswer;
+    // Assign correct answer from the object to a variable
+        var correct = questions[fiveNums[i]].correct;
+        console.log(correct);
+        var userAnswer = $("input[name='answer" + i + "']:checked").val();
+      if(correct == userAnswer) {
+        correctAnswer++;
+        console.log(correctAnswer);
+      } else {
+        wrongAnswer++
+        console.log(wrongAnswer);
+      }
+    } //end of i for loop
+  document.getElementById('correct').textContent = correctAnswer;
+  document.getElementById('wrong').textContent = wrongAnswer;
+  document.getElementById('total').textContent = correctAnswer / (fiveNums.length) * 100 + '%';
   } //end of quizResult 
 
   // Play again function
-  // document.getElementById("play-again").addEventListener("click", playAgain);
+  document.getElementById("play-again").addEventListener("click", playAgain);
 
-  // function playAgain(){
-  //   document.location.reload(true);
-  //   console.log('play new game');
-  // }
+  function playAgain(){
+    document.location.reload(true);
+    console.log('play new game');
+  }
 
 });//end of document ready function
