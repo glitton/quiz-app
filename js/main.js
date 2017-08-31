@@ -1,6 +1,4 @@
 // JavaScript for GS Warriors quiz app
-
-$(document).ready(function(){
 // Start quiz
 // generate five random numbers which correspond to five questions
 // Choose the five questions based on its index and display them
@@ -9,6 +7,10 @@ $(document).ready(function(){
 // Show results including right answers when user clicks results button
 // Allow user to play again 
 // rinse and repeat   
+
+"use strict"
+
+$(document).ready(function(){
 
 // Event listener triggered when start quiz button is clicked
 document.getElementById("start-quiz").addEventListener("click", startQuiz);
@@ -213,41 +215,45 @@ var questions = [
         console.log(radio + ' radio buttons');
         radio.value = answers[j];
         console.log(answers[j]);
-        ans.appendChild(document.createTextNode(answers[j]));
-
-      // When user clicks on Check Results button, the function below happens  
-      // document.getElementById("see-results").addEventListener("click", quizResult);
-      //   function quizResult() {
-      //     var correctAnswer = 0;
-      //     var wrongAnswer = 0;
-      //     // Assign correct answer from the object to a variable
-      //     var correct = questions[i].correct;
-      //     for(var k = 0; k < 4; k++){
-      //     // Capture user's answer based on the radio button checked
-      //     //Based on https://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button
-      //       var userAnswer = $('input[type='radio'][name='answer[k]']:checked').val();
-      //       if(correctAnswer == userAnswer) {
-      //         correctAnswer++;
-      //         console.log(correctAnswer);
-      //       } else {
-      //         wrongAnswer++
-      //         console.log(wrongAnswer);
-      //       }
-      //     } //end of k for loop
-      //   document.getElementById('correct').textContent = correctAnswer;
-      //   document.getElementById('wrong').textContent = wrongAnswer;
-      //   document.getElementById('total').textContent = correctAnswer / wrongAnswer;
-      //   } //end of quizResult     
+        ans.appendChild(document.createTextNode(answers[j]));    
       } //end of j for loop
     } //end of i for loop
   }//end of startQuiz function
 
-  // Play again function
-  document.getElementById("play-again").addEventListener("click", playAgain);
+  // When user clicks on Check Results button, the function below happens  
+document.getElementById("see-results").addEventListener("click", quizResult);
+  function quizResult() {
+    console.log('quiz result invoked');
+    var correctAnswer = 0;
+    var wrongAnswer = 0;
+    // Assign correct answer from the object to a variable
+    var correct = questions[i].correct;
+    console.log(correct);
+//     // Want to use the answers for the loop condition
+//     // var radio = document.getElementById('radio' + [i] + [j]); 
+//     for(var k = 0; k < 4; k++){
+//     // Capture user's answer based on the radio button checked
+// //     //Based on https://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button
+//       var userAnswer = $("input[name='answer[k]']:checked").val();
+//       if(correctAnswer == userAnswer) {
+//         correctAnswer++;
+//         console.log(correctAnswer);
+//       } else {
+//         wrongAnswer++
+//         console.log(wrongAnswer);
+//       }
+//     } //end of k for loop
+//   document.getElementById('correct').textContent = correctAnswer;
+//   document.getElementById('wrong').textContent = wrongAnswer;
+//   document.getElementById('total').textContent = correctAnswer / wrongAnswer;
+  } //end of quizResult 
 
-  function playAgain(){
-    document.location.reload(true);
-    console.log('play new game');
-  }
+  // Play again function
+  // document.getElementById("play-again").addEventListener("click", playAgain);
+
+  // function playAgain(){
+  //   document.location.reload(true);
+  //   console.log('play new game');
+  // }
 
 });//end of document ready function
