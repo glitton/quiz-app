@@ -19,9 +19,9 @@ document.getElementById("start-quiz").addEventListener("click", startQuiz);
 // from https://www.jetpunk.com/user-quizzes/23532/golden-state-warriors-trivia
 var questions = [
   { 
-    question : " Who are the two leading three-point shooters in Warriors history?",
-    answers  : ["Steph Curry, Monta Ellis",  "Steph Curry, Klay Thompson",          "Chris Mullin, Mitch Richmond", "Steph Curry, Kevin Durant"],
-    correct  : "Steph Curry, Klay Thompson",
+    question : " What Golden State Warrior entered a hospital in December 1987 for treatment for an alcohol problem?",
+    answers  : [" Winston Garland",  " Chris Washburn", " Chris Mullin", " Phil Ford"],
+    correct  : "Chris Mullin",
     image: "url"
   },
   { 
@@ -38,7 +38,7 @@ var questions = [
     image: "url"
   },
   { 
-    question : "What current Warriors player (2017) has 19 career triple-doubles?",
+    question : "What current Warriors player has 19 career triple-doubles?",
     answers  : [" Draymond Green", " Shaun Livingston", " Klay Thompson", " Kevin Durant"],
     correct  : " Draymond Green",
     image: "url"
@@ -50,19 +50,19 @@ var questions = [
     image: "url"
   },
   {  
-    question : "What is the name of the Warriors' arena (2016-17)?",
+    question : "What is the name of the Warriors' arena?",
     answers  : [" Dub Nation", " At&T Park", " Oracle Arena", " HP Pavilion"],
     correct  :  " Oracle Arena",
     image: "url"
   },
   {  
-    question : "What city is the Warriors arena located in (as of 2016-17)?",
+    question : "What city is the Warriors arena located in?",
     answers  : [" San Francisco", " San Jose", " Oakland", " Silicon Valley"],
     correct  : " Oakland",
     image: "url"
   },
   { 
-    question : "Who is the current coach of the Warriors (as of 2017)?",
+    question : "Who is the current coach of the Warriors?",
     answers  : [" Steve Kerr", " Mike Brown", " Don Nelson", " P.J. Carlisimo"],
     correct  : " Steve Kerr",
     image: "url"
@@ -134,13 +134,13 @@ var questions = [
     image: "url"
   },
   { 
-    question : "Which team did the 06-07 Warriors 'We Believe' team upset in the first round of the playoffs?",
+    question : "Which team did the Warriors 'We Believe' team upset in the first round of the playoffs?",
     answers  : [" Dallas Mavericks", " LA Lakers", " San Antonio Spurs", " Chicago Bulls"],
     correct  : " Dallas Maverics",
     image: "url"
   },
   { 
-    question : "Who has the record for most points in a quarter (as of 2016-17)? ",
+    question : "Who has the record for most points in a quarter? ",
     answers  : [" Steph Curry", " Zaza Pachulia", " Klay Thompson", " Draymond Green"],
     correct  : " Klay Thompson",
     image: "url"
@@ -152,7 +152,7 @@ var questions = [
     image: "url"
   },
   { 
-    question : "During 2006-07, Don Nelson replaced which Golden State Warriors coach? ",
+    question : "During the 06-07 season, Don Nelson replaced which Golden State Warriors coach? ",
     answers  : [" Dave Cowens", " Brian Winters", " Mike Montgomery", " Eric Musselman"],
     correct  : " Mike Montgomery",
     image: "url"
@@ -168,7 +168,37 @@ var questions = [
     answers  : [" Charles Barkley", " Isiah Thomas", " Chris Paul", " LeBron James"],
     correct  : " LeBron James",
     image: "url"
-  }        
+  },
+  { 
+    question : "In 1994, the Golden State Warriors traded Chris Webber to the Bullets for 3 draft picks and whom? ",
+    answers  : [" Tom Gugliotta", " Clifford Rozier", " Rony Seikaly", " Carlos Rogers"],
+    correct  : " Tom Gugliotta",
+    image: "url"
+  }, 
+  { 
+    question : "In 1991, who did the Golden State Warriors trade to the Sacramento Kings for Billy Owens? ",
+    answers  : [" Mitch Richmond", " Tim Hardaway", " Kenny Battle", " Chris Mullin"],
+    correct  : " Mitch Richmond",
+    image: "url"
+  },    
+  { 
+    question : "Who was not one of four the Golden State Warriors acquired from the Indiana Pacers in January 2007? ",
+    answers  : [" Sarunas Jasikevicius", " Al Harrington", " Matt Barnes", " Stephen Jackson"],
+    correct  : " Matt Barnes",
+    image: "url"
+  }, 
+  { 
+    question : "Who did the Golden State Warriors beat in the 1974-75 NBA Championship? ",
+    answers  : [" St. Louis Hawks", " Seattle Supersonics", " Los Angeles Lakers", " Washington Bullets"],
+    correct  : " Washington Bullets",
+    image: "url"
+  }, 
+  { 
+    question : "What do the Golden State Warriors call their mascot?",
+    answers  : [" Force", " Storm", " Thunder", " Lightning"],
+    correct  : " Thunder",
+    image: "url"
+  }    
 ]; //end of questions object
 
   // Random number generator to generate 5 questions
@@ -180,7 +210,7 @@ var questions = [
     // Do a while loop and keep going while the length of 
     //the array is less than 5
     while(fiveNums.length < 5) {
-      var randomNum = Math.floor(Math.random() * 25);
+      var randomNum = Math.floor(Math.random() * 30);
       // if the number is not in the array, keep generating random nums
       if(fiveNums.indexOf(randomNum) > -1 ) continue; //revisit this, I think if -1, means number isn't in the array
       // add the unique number to the array
@@ -194,11 +224,12 @@ var questions = [
       // set variable for the question  
       var question = questions[fiveNums[i]].question;
         console.log(question);
+        
       // assign an id in the dom for each question
       var ques = document.getElementById('question' + i);
       // display the question, preface with 
       // number 1 and colon, 2 colon, etc ... this is what [i + 1] is for
-      ques.textContent = [i + 1] + ': ' + question;
+      ques.textContent = [i + 1] + '. ' + question;
 
       //Display the answers as multiple radio buttons
       //set variable for the answers, which is an array of 4 elements
@@ -209,8 +240,8 @@ var questions = [
       // and assign the answers to radio buttons
       for(var j = 0; j < questions[fiveNums[i]].answers.length; j++){
         // assign a variable to each answer in the array
-        var ans = document.getElementById('answer' + [i] + [j]);
-        var radio = document.getElementById('radio' + [i] + [j]); 
+        var ans = document.getElementById('answer' + i + j);
+        var radio = document.getElementById('radio' + i + j); 
         // console.log(i + ' this is index i ' + j + ' this is index j');
         // console.log(ans + ' answer goes here');  
         // console.log(radio + ' radio buttons');
@@ -247,15 +278,34 @@ document.getElementById("see-results").addEventListener("click", quizResult);
     } //end of i for loop
   document.getElementById('correct').textContent = correctAnswer;
   document.getElementById('wrong').textContent = wrongAnswer;
-  document.getElementById('total').textContent = correctAnswer / (fiveNums.length) * 100 + '%';
+  var total = document.getElementById('total');
+  total.textContent = correctAnswer / (fiveNums.length) * 100 + '%';
+  var totalNum = total.textContent;
+  console.log(totalNum);
+  var message = document.getElementById('message');  
+
+    // Display a message based on total score
+    if(totalNum >= '90%'){
+      message.textContent = "You live and breathe Dub Nation!";
+    } else if (totalNum >= '60%') {
+      message.textContent = "Admit it, you're a bandwaggoner!"; 
+    } else {
+      message.textContent = "Where you've been? Get out from under your rock!"
+    }
+
+    // Show questions with user answers and correct answers
+
+
   } //end of quizResult 
 
-  // Play again function
+  // Play again function which scrolls to the top
   document.getElementById("play-again").addEventListener("click", playAgain);
 
   function playAgain(){
     document.location.reload(true);
     console.log('play new game');
+    document.body.scrollTop = 0; // For Chrome, Safari and Opera 
+    document.documentElement.scrollTop = 0; // For IE and Firefox
   }
 
 });//end of document ready function

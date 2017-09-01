@@ -17,7 +17,7 @@ body, html {
 
 .title {
   position: relative;
-  left: 308px;
+  left: 254px;
   bottom: 90px;
   color: #006BB6;
   text-shadow: 2px 2px 2px #FDB927;
@@ -65,6 +65,9 @@ a:link {
   border-color: #006BB6;
   color: white;
   font-size: 22px;
+  position: relative;
+  bottom: 25px;
+  right: 18px; 
 }
 
 .quiz-btn:hover{
@@ -75,12 +78,17 @@ a:link {
 
 .game-area {
   background: url(../img/gsw-fans3.jpg);
-  background-size: 100% 40%;
+  background-size: 100% 30%;
 }
 
-.quiz-ques {
+h3 {
+  margin: 10px auto;
+  line-height: 140%;
+}
+
+.quiz {
   width: 80%;
-  margin: 100px auto 50px auto;
+  margin: 50px auto;
   text-align: center;
   color: #fff;
 }
@@ -93,11 +101,10 @@ a:link {
 }
 
 form {
-  width: 33%;
+  width: 29%;
   margin: 0 auto;
-  font-size: 20px;
-  position: relative;
-  bottom: 100px;
+  font-size: 22px;
+  letter-spacing: .5px;
 }
 
 .radio-display{
@@ -111,10 +118,23 @@ form {
   background-repeat: no-repeat;
 }
 
+.results-btn {
+  background-color: #006BB6;
+  border-color: #006BB6;
+  color: white;
+  font-size: 22px;
+}
+
+.results-btn:hover{
+  background-color: #FDB927;
+  border-color: #FDB927;
+  color: black;
+}
+
 .see-results {
   text-align: center;
   position: relative;
-  /*bottom: 40px;*/
+  margin-bottom: 30px;
 }
 
 .results-summary {
@@ -122,4 +142,11 @@ form {
   margin: 100px auto 50px auto;
   text-align: center;
   color: white;
+}
+
+.message {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
 }

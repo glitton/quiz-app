@@ -9,16 +9,16 @@
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Google Font CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans" rel="stylesheet">
     <!-- My CSS -->
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <!-- Navbar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <a href="#top">
-    <img class='logo' src="img/warriors-logo.png">
+    <img class='logo' src="img/gsw-logo.png">
   </a>
-  <h2 class="title animated flash">How Well Do You Know The Golden State Warriors?</h2>
+  <h2 class="title animated flash">How Well Do You Know The 2016-17 Golden State Warriors?</h2>
   <button type="button" id='play-again' class="btn btn-primary btn-circle btn-xl">
     <i class="fa fa-repeat" aria-hidden="true"></i>
   </button>
@@ -38,209 +38,162 @@
 
 <!-- Question and Answer Area -->
 <div class="container-fluid game-area" id="questions">  
-
   <!-- Question and Answer 0 -->
-  <div class="row quiz-ques">
-    <!-- Column spacer -->
-    <div class="col-sm-2"></div>
-    <!-- Game image and Question 0-->
-    <div class="col-sm-8 question">
-      <h3 id="question0"></h3>
+    <div class="row quiz"">
+      <!-- Game image and Question 0-->
+      <div class="col-sm-1"></div> <!-- spacer -->
+      <div class="col-sm-10">
+        <h3 id="question0"></h3>
+        <!-- Answer choices to Question 0 -->
+        <form>
+        <!-- answers ids refer to answer number (ex. 0) plus answers index in js file ex. index 1 id='answer01' is answer 0 index 1-->
+          <label class='radio-display' id="answer00">
+            <input id='radio00' type="radio" name="answer0" value="">
+          </label> 
+          <label class='radio-display' id="answer01">
+            <input id='radio01' type="radio" name="answer0" value="">
+          </label> 
+          <label class='radio-display' id="answer02"> 
+            <input id='radio02' type="radio" name="answer0" value="">
+          </label>
+          <label class='radio-display' id="answer03">
+            <input id='radio03' type="radio" name="answer0" value="">
+          </label> 
+        </form> 
+        <div class="col-sm-1"></div> <!-- spacer -->       
+      </div>         
     </div>
-    <!-- Column spacer -->
-    <div class="col-sm-2"></div>           
-  </div>
-  <!-- Answer choices to Question 0 -->
-  <div class="row quiz-ans">
-    <!-- Column spacer -->
-    <div class="col-sm-2"></div>
-    <!-- Radio button choices -->
-    <div class="col-sm-8">
-      <form>
-      <!-- answers ids refer to answer number (ex. 0) plus answers index in js file ex. index 1 id='answer01' is answer 0 index 1-->
-        <label class='radio-display' id="answer00">
-          <input id='radio00' type="radio" name="answer0" value="">
-        </label> 
-        <label class='radio-display' id="answer01">
-          <input id='radio01' type="radio" name="answer0" value="">
-        </label> 
-        <label class='radio-display' id="answer02"> 
-          <input id='radio02' type="radio" name="answer0" value="">
-        </label>
-        <label class='radio-display' id="answer03">
-          <input id='radio03' type="radio" name="answer0" value="">
-        </label> 
-      </form>
-    <!-- Column spacer -->
-    <div class="col-sm-2"></div>
-    </div>
-  </div>
-
+   
   <!-- Question and Answer 1 -->
-  <div class="row quiz-ques">
-    <!-- Column spacer -->
-    <div class="col-sm-2"</div>
-    <!-- Game image and Question 1-->
-    <div class="col-sm-8 question">
-      <h3 id="question1"></h3>
+    <div class="row quiz">
+      <!-- Game image and Question 1-->
+      <div class="col-sm-1"></div> <!-- spacer -->
+      <div class="col-sm-10">
+        <h3 id="question1"></h3>
+        <!-- Answer choices to question 1 -->
+        <form>
+        <!-- answers ids refer to answer number (ex. 1) plus answers index in js file ex. index 1 id='answer11' is answer 1 index 1-->
+          <label class='radio-display' id="answer10">
+            <input id='radio10' type="radio" name="answer1" value="">
+          </label> 
+          <label class='radio-display' id="answer11">
+            <input id='radio11' type="radio" name="answer1" value="">
+          </label> 
+          <label class='radio-display' id="answer12"> 
+            <input id='radio12' type="radio" name="answer1" value="">
+          </label>
+          <label class='radio-display' id="answer13">
+            <input id='radio13' type="radio" name="answer1" value="">
+          </label> 
+        </form>
+        <div class="col-sm-1"></div> <!-- spacer -->  
+      </div>          
     </div>
-    <!-- Column spacer -->
-    <div class="col-sm-2"></div>           
-  </div>
-  <!-- Answer choices to question 1 -->
-  <div class="row quiz-ans">
-    <!-- Column spacer -->
-    <div class="col-sm-2"></div>
-    <!-- Radio button choices -->
-    <div class="col-sm-8">
-      <form>
-      <!-- answers ids refer to answer number (ex. 1) plus answers index in js file ex. index 1 id='answer11' is answer 1 index 1-->
-        <label class='radio-display' id="answer10">
-          <input id='radio10' type="radio" name="answer1" value="">
-        </label> 
-        <label class='radio-display' id="answer11">
-          <input id='radio11' type="radio" name="answer1" value="">
-        </label> 
-        <label class='radio-display' id="answer12"> 
-          <input id='radio12' type="radio" name="answer1" value="">
-        </label>
-        <label class='radio-display' id="answer13">
-          <input id='radio13' type="radio" name="answer1" value="">
-        </label> 
-      </form>
-    <!-- Column spacer -->
-    <div class="col-sm-2"></div>
-    </div>
-  </div>
 
   <!-- Question and Answer 2 -->
-  <div class="row quiz-ques">
-    <!-- Column spacer -->
-    <div class="col-sm-2"></div>
-    <!-- Game image and Question 2-->
-    <div class="col-sm-8 question">
-      <h3 id="question2"></h3>
+    <div class="row quiz">
+      <!-- Game image and Question 2-->
+      <div class="col-sm-1"></div> <!-- spacer -->
+      <div class="col-sm-10">
+        <h3 id="question2"></h3>
+        <!-- Answer choices to question 2 -->
+        <form>
+          <label class='radio-display' id="answer20">
+            <input id='radio20' type="radio" name="answer2" value="">
+          </label> 
+          <label class='radio-display' id="answer21">
+            <input id='radio21' type="radio" name="answer2" value="">
+          </label> 
+          <label class='radio-display' id="answer22"> 
+            <input id='radio22' type="radio" name="answer2" value="">
+          </label>
+          <label class='radio-display' id="answer23">
+            <input id='radio23' type="radio" name="answer2" value="">
+          </label> 
+        </form> 
+        <div class="col-sm-1"></div> <!-- spacer -->       
+      </div>      
     </div>
-    <!-- Column spacer -->
-    <div class="col-sm-2"></div>           
-  </div>
-  <!-- Answer choices to question 2 -->
-  <div class="row quiz-ans">
-    <!-- Column spacer -->
-    <div class="col-sm-2"></div>
-    <!-- Radio button choices -->
-    <div class="col-sm-8">
-      <form>
-        <label class='radio-display' id="answer20">
-          <input id='radio20' type="radio" name="answer2" value="">
-        </label> 
-        <label class='radio-display' id="answer21">
-          <input id='radio21' type="radio" name="answer2" value="">
-        </label> 
-        <label class='radio-display' id="answer22"> 
-          <input id='radio22' type="radio" name="answer2" value="">
-        </label>
-        <label class='radio-display' id="answer23">
-          <input id='radio23' type="radio" name="answer2" value="">
-        </label> 
-      </form>
-    <!-- Column spacer -->
-    <div class="col-sm-2"></div>
-    </div>
-  </div>  
 
-  <!-- Question and Answer 3 -->
-  <div class="row quiz-ques">
-    <!-- Column spacer -->
-    <div class="col-sm-2"></div>
-    <!-- Game image -->
-    <div class="col-sm-8 question">
-      <h3 id="question3"></h3>
-    </div>
-    <!-- Column spacer -->
-    <div class="col-sm-2"></div>           
-  </div>
-  <!-- Answer choices to question 3 -->
-  <div class="row quiz-ans">
-    <!-- Column spacer -->
-    <div class="col-sm-2"></div>
-    <!-- Radio button choices -->
-    <div class="col-sm-8">
-      <form>
-        <label class='radio-display' id="answer30">
-          <input id='radio30' type="radio" name="answer3" value="">
-        </label> 
-        <label class='radio-display' id="answer31">
-          <input id='radio31' type="radio" name="answer3" value="">
-        </label> 
-        <label class='radio-display' id="answer32"> 
-          <input id='radio32' type="radio" name="answer3" value="">
-        </label>
-        <label class='radio-display' id="answer33">
-          <input id='radio33' type="radio" name="answer3" value="">
-        </label> 
-      </form>
-    <!-- Column spacer -->
-    <div class="col-sm-2"></div>
-    </div>
-  </div>   
+  <!-- Question and Answer 3 --> 
+    <div class="row quiz">
+      <div class="col-sm-1"></div> <!-- spacer -->
+      <div class="col-sm-10">
+        <h3 id="question3"></h3>
+        <!-- Answer choices to question 3 -->
+        <form>
+          <label class='radio-display' id="answer30">
+            <input id='radio30' type="radio" name="answer3" value="">
+          </label> 
+          <label class='radio-display' id="answer31">
+            <input id='radio31' type="radio" name="answer3" value="">
+          </label> 
+          <label class='radio-display' id="answer32"> 
+            <input id='radio32' type="radio" name="answer3" value="">
+          </label>
+          <label class='radio-display' id="answer33">
+            <input id='radio33' type="radio" name="answer3" value="">
+          </label> 
+        </form>
+        <div class="col-sm-1"></div> <!-- spacer -->        
+      </div>
+    </div>  
 
-  <!-- Question and Answer 4 -->
-  <div class="row quiz-ques">
-    <!-- Column spacer -->
-    <div class="col-sm-2"></div>
-    <!-- Game image -->
-    <div class="col-sm-8 question">
-      <h3 id="question4"></h3>
-    </div>
-    <!-- Column spacer -->
-    <div class="col-sm-2"></div>           
+  <!-- Question and Answer 4 -->  
+    <div class="row quiz">
+      <div class="col-sm-1"></div> <!-- spacer -->       
+      <div class="col-sm-10">
+        <h3 id="question4"></h3>
+        <form>
+          <label class='radio-display' id="answer40">
+            <input id='radio40' type="radio" name="answer4" value="">
+          </label> 
+          <label class='radio-display' id="answer41">
+            <input id='radio41' type="radio" name="answer4" value="">
+          </label> 
+          <label class='radio-display' id="answer42"> 
+            <input id='radio42' type="radio" name="answer4" value="">
+          </label>
+          <label class='radio-display' id="answer43">
+            <input id='radio43' type="radio" name="answer4" value="">
+          </label> 
+        </form> 
+        <div class="col-sm-1"></div> <!-- spacer -->             
+      </div>
+    </div>  
+
+ <!-- See result button -->
+  <div class="row see-results">
+    <a  href="#results">
+      <button class="results-btn btn btn-warning" id="see-results" type="button">Check Your Score</button>
+    </a>  
   </div>
-  <!-- Answer choices to question 4 -->
-  <div class="row quiz-ans">
-    <!-- Column spacer -->
-    <div class="col-sm-2"></div>
-    <!-- Radio button choices -->
-    <div class="col-sm-8">
-      <form>
-        <label class='radio-display' id="answer40">
-          <input id='radio40' type="radio" name="answer4" value="">
-        </label> 
-        <label class='radio-display' id="answer41">
-          <input id='radio41' type="radio" name="answer4" value="">
-        </label> 
-        <label class='radio-display' id="answer42"> 
-          <input id='radio42' type="radio" name="answer4" value="">
-        </label>
-        <label class='radio-display' id="answer43">
-          <input id='radio43' type="radio" name="answer4" value="">
-        </label> 
-      </form>
-    <!-- Column spacer -->
-    <div class="col-sm-2"></div>
-    </div>
-  </div> 
+
 </div> <!-- End of question and answer container -->
 
 <!-- Results container -->
 <div class="container-fluid results-area">
-    <!-- See result button -->
-  <div class="row see-results">
-    <a  href="#results">
-      <button class="quiz-btn btn btn-warning" id="see-results" type="button">Check Results</button>
-    </a>  
-  </div>
   <!-- Summary of results -->
-  <div class='row results-summary'>
+  <div class='row results-summary' id='results'>
     <div class='col-sm-4'>
-      <h3 id='correct'>Correct: </h3>
+      <h2 >Correct Answers: <span id='correct'></span></h2>
     </div>
     <div class='col-sm-4'>
-      <h3 id='wrong'>Wrong: </h3>      
+      <h2>Wrong Answers: <span id='wrong'></span></h2>      
     </div>
     <div class='col-sm-4'>
-      <h3 id='total'>Total Score: </h3>    
+      <h2 >Total Score: <span id='total'></span></h2>    
     </div>
+  </div>
+  <div class='row message'>
+    <h3 id='message'></h3>
+    <ul class='show-answers'>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
   </div>
 </div> <!-- End of results container -->
 
