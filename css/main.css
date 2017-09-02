@@ -79,6 +79,8 @@ a:link {
 .game-area {
   background: url(../img/gsw-fans3.jpg);
   background-size: 100% 30%;
+  margin-top: 275px;
+  padding-top: 50px;
 }
 
 h3 {
@@ -114,8 +116,7 @@ form {
 
 .results-area {
   background: url(../img/gsw.jpg);
-  background-size: 960px 540px;
-  background-repeat: no-repeat;
+  background-size: 100% 70%;
 }
 
 .results-btn {
@@ -149,4 +150,17 @@ form {
   margin: 0 auto;
   text-align: center;
   color: #fff;
+}
+
+.show-answers {
+  font-size: 22px;
+  text-align: center;
+  list-style: none;
+  color: white;
+  margin: 30px auto;
+  line-height: 35px
+}
+
+.results {
+  margin-top: -60px;
 }

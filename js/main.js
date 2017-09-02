@@ -223,18 +223,21 @@ var questions = [
     for(var i = 0; i < fiveNums.length; i++) {
       // set variable for the question  
       var question = questions[fiveNums[i]].question;
-        console.log(question);
-        
+        // console.log(question);
+
       // assign an id in the dom for each question
       var ques = document.getElementById('question' + i);
       // display the question, preface with 
       // number 1 and colon, 2 colon, etc ... this is what [i + 1] is for
       ques.textContent = [i + 1] + '. ' + question;
+      // Get id to display question in the results area
+      var showQues = document.getElementById('ques' + i);
+      showQues.textContent = [i + 1] + '. ' + question;
 
       //Display the answers as multiple radio buttons
       //set variable for the answers, which is an array of 4 elements
       var answers = questions[fiveNums[i]].answers;
-        console.log(answers + ' this is the answers array'); 
+        // console.log(answers + ' this is the answers array'); 
 
       // create a loop within the other for loop in line 190
       // and assign the answers to radio buttons
@@ -266,8 +269,11 @@ document.getElementById("see-results").addEventListener("click", quizResult);
 // //     //Based on https://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button
     // Assign correct answer from the object to a variable
         var correct = questions[fiveNums[i]].correct;
+        document.getElementById('correct' + i ).textContent = 'Correct Answer: ' + correct;
         console.log(correct);
         var userAnswer = $("input[name='answer" + i + "']:checked").val();
+        console.log(userAnswer);
+        document.getElementById('userAns' + i).textContent = 'Your Answer: ' + userAnswer;
       if(correct == userAnswer) {
         correctAnswer++;
         console.log(correctAnswer);

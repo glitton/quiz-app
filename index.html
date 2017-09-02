@@ -172,9 +172,12 @@
 </div> <!-- End of question and answer container -->
 
 <!-- Results container -->
-<div class="container-fluid results-area">
+<div class="container-fluid results-area" id='results'>
   <!-- Summary of results -->
-  <div class='row results-summary' id='results'>
+  <div class='row results-summary'>
+    <div class="row message">
+      <h2 id='message'></h2>
+    </div>
     <div class='col-sm-4'>
       <h2 >Correct Answers: <span id='correct'></span></h2>
     </div>
@@ -185,15 +188,33 @@
       <h2 >Total Score: <span id='total'></span></h2>    
     </div>
   </div>
-  <div class='row message'>
-    <h3 id='message'></h3>
+  <div class='row results'>
     <ul class='show-answers'>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li id='ques0'></li>
+      <li id='correct0'></li>
+      <li id='userAns0'></li>
     </ul>
+    <ul class='show-answers'>  
+      <li id='ques1'></li>      
+      <li id='correct1'></li>
+      <li id='userAns1'></li>
+    </ul>  
+    <ul class='show-answers'>
+      <li id='ques2'></li>
+      <li id='correct2'></li>
+      <li id='userAns2'></li>
+    </ul>
+    <ul class='show-answers'>  
+      <li id='ques3'></li>      
+      <li id='correct3'></li>
+      <li id='userAns3'></li>
+    </ul>
+    <ul class='show-answers'>  
+      <li id='ques4'></li>      
+      <li id='correct4'></li>
+      <li id='userAns4'></li>
+    </ul>    
+
   </div>
 </div> <!-- End of results container -->
 
