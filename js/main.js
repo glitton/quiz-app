@@ -122,7 +122,7 @@ var questions = [
     image: "url"
   },
   { 
-    question : "Who wasn't on the 'We Believe' team?",
+    question : "Who wasn't on the 2006-07 'We Believe' team?",
     answers  : [" Baron Davis", " Gilbert Arenas", " Jason Richardson", " Monta Ellis"],
     correct  : " Gilbert Arenas",
     image: "url"
