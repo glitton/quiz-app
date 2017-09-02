@@ -274,12 +274,15 @@ document.getElementById("see-results").addEventListener("click", quizResult);
         var userAnswer = $("input[name='answer" + i + "']:checked").val();
         console.log(userAnswer);
         document.getElementById('userAns' + i).textContent = 'Your Answer: ' + userAnswer;
+        // var ansClass = document.getElementsByClassName('show-answers');
+        // console.log(ansClass);
+
       if(correct == userAnswer) {
+        $('.show-answers').addClass('correct').removeClass('wrong');
         correctAnswer++;
-        console.log(correctAnswer);
       } else {
+        $('.show-answers').addClass('wrong').removeClass('correct');
         wrongAnswer++
-        console.log(wrongAnswer);
       }
     } //end of i for loop
   document.getElementById('correct').textContent = correctAnswer;

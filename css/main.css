@@ -157,7 +157,18 @@ input[type='radio'] {
   list-style: none;
   color: white;
   margin: 30px auto;
-  line-height: 35px
+  line-height: 35px;
+  width: 55%;
+}
+
+.correct {
+  border: 2px solid #006BB6;
+  border-radius: 25px;
+}
+
+.wrong {
+  border: 2px solid red;
+  border-radius: 25px;
 }
 
 .results {
