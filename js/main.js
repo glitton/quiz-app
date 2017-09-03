@@ -14,6 +14,7 @@ $(document).ready(function(){
 
 // Event listener triggered when start quiz button is clicked
 document.getElementById("start-quiz").addEventListener("click", startQuiz);
+// Scroll to top of the quiz
 
 // question and answer array of objects 
 // from https://www.jetpunk.com/user-quizzes/23532/golden-state-warriors-trivia
@@ -219,6 +220,7 @@ var questions = [
     console.log(fiveNums);
 
   function startQuiz() {
+
     // loop over array and get question corresponding to number
     for(var i = 0; i < fiveNums.length; i++) {
       // set variable for the question  
@@ -274,8 +276,6 @@ document.getElementById("see-results").addEventListener("click", quizResult);
         var userAnswer = $("input[name='answer" + i + "']:checked").val();
         console.log(userAnswer);
         document.getElementById('userAns' + i).textContent = 'Your Answer: ' + userAnswer;
-        // var ansClass = document.getElementsByClassName('show-answers');
-        // console.log(ansClass);
 
       if(correct == userAnswer) {
         $('.show-answers').addClass('correct').removeClass('wrong');
@@ -285,6 +285,7 @@ document.getElementById("see-results").addEventListener("click", quizResult);
         wrongAnswer++
       }
     } //end of i for loop
+
   document.getElementById('correct').textContent = correctAnswer;
   document.getElementById('wrong').textContent = wrongAnswer;
   var total = document.getElementById('total');
@@ -302,7 +303,8 @@ document.getElementById("see-results").addEventListener("click", quizResult);
       message.textContent = "Where you've been? Get out from under your rock!"
     }
 
-    // Show questions with user answers and correct answers
+    // Show and flash play again button
+
 
 
   } //end of quizResult 
