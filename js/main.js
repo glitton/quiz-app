@@ -275,13 +275,14 @@ document.getElementById("see-results").addEventListener("click", quizResult);
         console.log(correct);
         var userAnswer = $("input[name='answer" + i + "']:checked").val();
         console.log(userAnswer);
-        document.getElementById('userAns' + i).textContent = 'Your Answer: ' + userAnswer;
-
+        document.getElementById('userAns' + i).textContent = 'Your Answer: ' + userAnswer; 
+      // if userAnswer is correct, add class show-answers and correct
+      // update total  
       if(correct == userAnswer) {
-        $('.show-answers').addClass('correct').removeClass('wrong');
+        $('.show-answers')[i].className = 'show-answers correct';
         correctAnswer++;
       } else {
-        $('.show-answers').addClass('wrong').removeClass('correct');
+        $('.show-answers')[i].className = ' show-answers wrong';
         wrongAnswer++
       }
     } //end of i for loop
@@ -295,7 +296,7 @@ document.getElementById("see-results").addEventListener("click", quizResult);
   var message = document.getElementById('message');  
 
     // Display a message based on total score
-    if(totalNum >= '90%'){
+    if(totalNum >= '80%'){
       message.textContent = "You live and breathe Dub Nation!";
     } else if (totalNum >= '60%') {
       message.textContent = "Admit it, you're a bandwaggoner!"; 

@@ -119,8 +119,8 @@ input[type='radio'] {
 }  
 
 .results-area {
-  background: url(../img/gsw.jpg);
-  background-size: 100% 70%;
+  background: url(../img/gsw2.jpg);
+  background-size: 100% 50%;
 }
 
 .results-btn {
@@ -168,11 +168,13 @@ input[type='radio'] {
 .correct {
   border: 2px solid #006BB6;
   border-radius: 25px;
+  padding: 10px;
 }
 
 .wrong {
   border: 2px solid red;
   border-radius: 25px;
+  padding: 10px;
 }
 
 .results {
@@ -184,4 +186,15 @@ input[type='radio'] {
   left: 1070px;
   bottom: 148px;
   background-color: #FDB927;
+}
+
+.img-correct {
+  position: relative;
+  left: 286px;
+  bottom: 84px;
+  color: #006BB6;
+}
+
+.img-wrong {
+
 }
