@@ -82,7 +82,7 @@ a:link {
 
 .game-area {
   background: url(../img/gsw-fans3.jpg);
-  background-size: 100% 50%;
+  background-size: 100% 60%;
 }
 
 h3 {
@@ -188,13 +188,3 @@ input[type='radio'] {
   background-color: #FDB927;
 }
 
-.img-correct {
-  position: relative;
-  left: 286px;
-  bottom: 84px;
-  color: #006BB6;
-}
-
-.img-wrong {
-
-}

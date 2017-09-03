@@ -12,9 +12,17 @@
 
 $(document).ready(function(){
 
+  //Hide the results area on page load
+  $('.game-area').hide();
+  $('#results').hide();
+
+
 // Event listener triggered when start quiz button is clicked
 document.getElementById("start-quiz").addEventListener("click", startQuiz);
-// Scroll to top of the quiz
+// When start quiz button is clicked, show game area and questions
+  $('.game-area').show();
+  //Hide play again flashing btn when players start quiz
+  $('#again').hide();
 
 // question and answer array of objects 
 // from https://www.jetpunk.com/user-quizzes/23532/golden-state-warriors-trivia
@@ -260,6 +268,10 @@ var questions = [
   // When user clicks on Check Results button, the function below happens  
 document.getElementById("see-results").addEventListener("click", quizResult);
   function quizResult() {
+    // Show results area with score and answers
+    $('#results').show();
+      //Show play again flashing btn
+    $('#again').show();
     console.log('quiz result invoked');
     var correctAnswer = 0;
     var wrongAnswer = 0;
@@ -296,17 +308,13 @@ document.getElementById("see-results").addEventListener("click", quizResult);
   var message = document.getElementById('message');  
 
     // Display a message based on total score
-    if(totalNum >= '80%'){
+    if(totalNum > '80%'){
       message.textContent = "You live and breathe Dub Nation!";
     } else if (totalNum >= '60%') {
       message.textContent = "Admit it, you're a bandwaggoner!"; 
     } else {
       message.textContent = "Where you've been? Get out from under your rock!"
     }
-
-    // Show and flash play again button
-
-
 
   } //end of quizResult 
 
