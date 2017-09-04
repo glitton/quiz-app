@@ -13,16 +13,12 @@
 $(document).ready(function(){
 
   //Hide the results area on page load
-  $('.game-area').hide();
   $('#results').hide();
+  $('.game-area').hide();
 
 
 // Event listener triggered when start quiz button is clicked
 document.getElementById("start-quiz").addEventListener("click", startQuiz);
-// When start quiz button is clicked, show game area and questions
-  $('.game-area').show();
-  //Hide play again flashing btn when players start quiz
-  $('#again').hide();
 
 // question and answer array of objects 
 // from https://www.jetpunk.com/user-quizzes/23532/golden-state-warriors-trivia
@@ -30,7 +26,7 @@ var questions = [
   { 
     question : " What Golden State Warrior entered a hospital in December 1987 for treatment for an alcohol problem?",
     answers  : [" Winston Garland",  " Chris Washburn", " Chris Mullin", " Phil Ford"],
-    correct  : "Chris Mullin",
+    correct  : " Chris Mullin",
     image: "url"
   },
   { 
@@ -60,7 +56,7 @@ var questions = [
   },
   {  
     question : "What is the name of the Warriors' arena?",
-    answers  : [" Dub Nation", " At&T Park", " Oracle Arena", " HP Pavilion"],
+    answers  : [" SAP Center", " AT&T Park", " Oracle Arena", " HP Pavilion"],
     correct  :  " Oracle Arena",
     image: "url"
   },
@@ -202,12 +198,42 @@ var questions = [
     correct  : " Washington Bullets",
     image: "url"
   }, 
-  { 
+  { //30
     question : "What do the Golden State Warriors call their mascot?",
     answers  : [" Force", " Storm", " Thunder", " Lightning"],
     correct  : " Thunder",
     image: "url"
-  }    
+  },    
+  { //31
+    question : "Who is the 2017 Warriors' current majority owner?",
+    answers  : [" Vivek Ranadive", " Joe Lacob", " Steve Ballmer", " Larry Ellison"],
+    correct  : " Joe Lacob",
+    image: "url"
+  },
+  { //32
+    question : "Which Hall of Fame coach has twice been the head coach of the Warriors?",
+    answers  : [" Red Auerbach", " Phil Jackson", " Greg Popovich", " Don Nelson"],
+    correct  : " Don Nelson",
+    image: "url"
+  },  
+  { //33
+    question : "Which of the following has never been the name of the team?",
+    answers  : [" Philadelphia Warriors", " Bay City Warriors", " San Francisco Warriors", " Golden State Warriors"],
+    correct  : " Bay City Warriors",
+    image: "url"
+  }, 
+  {//34
+    question : "In the 1998 draft, what Warrior was traded for Vince Carter?",
+    answers  : [" Jason Richardson", " Troy Murphy", " Antawn Jamison", " Gilbert Arenas"],
+    correct  : " Antawn Jamison",
+    image: "url"
+  }, 
+  {//35
+    question : "Monta Ellis was traded to Milwaukee for this player?",
+    answers  : [" David Lee", " Andrew Bogut", " Baron Davis", " Stephen Jackson"],
+    correct  : " Andrew Bogut",
+    image: "url"
+  }      
 ]; //end of questions object
 
   // Random number generator to generate 5 questions
@@ -219,7 +245,7 @@ var questions = [
     // Do a while loop and keep going while the length of 
     //the array is less than 5
     while(fiveNums.length < 5) {
-      var randomNum = Math.floor(Math.random() * 30);
+      var randomNum = Math.floor(Math.random() * 35);
       // if the number is not in the array, keep generating random nums
       if(fiveNums.indexOf(randomNum) > -1 ) continue; //revisit this, I think if -1, means number isn't in the array
       // add the unique number to the array
@@ -228,6 +254,12 @@ var questions = [
     console.log(fiveNums);
 
   function startQuiz() {
+      // Display game area for questions
+      $('.game-area').show();
+      //Hide play again flashing btn when players start quiz
+      $('#again').hide();
+      // Disable start quiz button when questions are displayed
+      $(".disable-btn").attr("disabled", true);
 
     // loop over array and get question corresponding to number
     for(var i = 0; i < fiveNums.length; i++) {
@@ -294,23 +326,22 @@ document.getElementById("see-results").addEventListener("click", quizResult);
         $('.show-answers')[i].className = 'show-answers correct';
         correctAnswer++;
       } else {
-        $('.show-answers')[i].className = ' show-answers wrong';
+        $('.show-answers')[i].className = 'show-answers wrong';
         wrongAnswer++
       }
     } //end of i for loop
 
   document.getElementById('correct').textContent = correctAnswer;
   document.getElementById('wrong').textContent = wrongAnswer;
-  var total = document.getElementById('total');
-  total.textContent = correctAnswer / (fiveNums.length) * 100 + '%';
-  var totalNum = total.textContent;
-  console.log(totalNum);
+  var total = Math.floor((correctAnswer / fiveNums.length) * 100);
+    console.log(total);
+  document.getElementById('total').textContent = total + '%';
   var message = document.getElementById('message');  
 
     // Display a message based on total score
-    if(totalNum > '80%'){
+    if(total > 75){
       message.textContent = "You live and breathe Dub Nation!";
-    } else if (totalNum >= '60%') {
+    } else if (total >= 60) {
       message.textContent = "Admit it, you're a bandwaggoner!"; 
     } else {
       message.textContent = "Where you've been? Get out from under your rock!"

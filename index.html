@@ -21,7 +21,7 @@
   <a href="#top">
     <img class='logo' src="img/gsw-logo.png">
   </a>
-  <h2 class="title animated flash">How Well Do You Know The 2016-17 Golden State Warriors?</h2>
+  <h1 class="title animated flash">How Well Do You Know The Golden State Warriors?</h1>
   <button type="button" id='play-again' class="btn btn-primary btn-circle btn-xl">
     <i class="fa fa-repeat" aria-hidden="true"></i>
   </button>
@@ -35,13 +35,13 @@
   <!-- Take quiz button -->
   <div class="row take-quiz">
     <a href="#question-top">
-      <button class="quiz-btn btn btn-warning" id="start-quiz" type="button">Take The Quiz Now!</button>
+      <button class="quiz-btn btn btn-warning disable-btn" id="start-quiz" type="button">Take The Quiz Now!</button>
     </a>  
   </div>
 </div>
 
 <!-- Question and Answer Area -->
-<div class="container-fluid game-area" id="question-top">  
+<div class="container-fluid game-area hide-game" id="question-top">  
   <!-- Question and Answer 0 -->
     <div class="row quiz">
       <!-- Game image and Question 0-->
@@ -180,7 +180,7 @@
   <!-- Summary of results -->
   <div class='row results-summary'>
     <div class="row message">
-      <h2 id='message'></h2>
+      <h1 id='message'></h1>
     </div>
     <div class='col-sm-4'>
       <h2 >Correct Answers: <span id='correct'></span></h2>

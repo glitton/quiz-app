@@ -12,12 +12,12 @@ body, html {
 }
 
 .logo {
-  margin: 10px 0px 10px 44px;
+  margin: 10px 0px 10px 107px;
 }
 
 .title {
   position: relative;
-  left: 180px;
+  left: 210px;
   bottom: 90px;
   color: #006BB6;
   text-shadow: 2px 2px 2px #FDB927;
@@ -31,8 +31,15 @@ body, html {
   line-height: 1.33;
   border-radius: 35px;
   position: relative;
-  left: 1063px;
+  left: 1090px;
   top: -149px;
+}
+/*play again flashing button*/
+.again {
+  position: relative;
+  left: 1095px;
+  bottom: 148px;
+  background-color: #FDB927;
 }
 
 body {
@@ -47,7 +54,8 @@ body {
 }
 
 .strength {
-  margin-top: 110px;
+  margin-top: 100px;
+  margin-left: 10px;
 }
 
 .take-quiz {
@@ -91,7 +99,7 @@ h3 {
 }
 
 .quiz {
-  width: 80%;
+  width: 78%;
   margin: 50px auto;
   text-align: center;
   color: #fff;
@@ -106,7 +114,7 @@ h3 {
 
 label {
   display: inline-block;
-  width: 300px;
+  width: 285px;
   margin: 0 auto;
   font-size: 22px;
   letter-spacing: .5px;
@@ -120,7 +128,7 @@ input[type='radio'] {
 
 .results-area {
   background: url(../img/gsw2.jpg);
-  background-size: 100% 50%;
+  background-size: 100% 60%;
 }
 
 .results-btn {
@@ -149,7 +157,7 @@ input[type='radio'] {
 }
 
 .message {
-  width: 80%;
+  width: 75%;
   margin: 0 auto;
   text-align: center;
   color: #fff;
@@ -181,10 +189,5 @@ input[type='radio'] {
   margin-top: -60px;
 }
 
-.again {
-  position: relative;
-  left: 1070px;
-  bottom: 148px;
-  background-color: #FDB927;
-}
+
 
