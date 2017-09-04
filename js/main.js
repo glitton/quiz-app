@@ -67,7 +67,7 @@ var questions = [
     image: "url"
   },
   { 
-    question : "Who is the current coach of the Warriors?",
+    question : "As of 2017, who is the coach of the Warriors?",
     answers  : [" Steve Kerr", " Mike Brown", " Don Nelson", " P.J. Carlisimo"],
     correct  : " Steve Kerr",
     image: "url"
@@ -187,7 +187,7 @@ var questions = [
     image: "url"
   },    
   { 
-    question : "Who was not one of four the Golden State Warriors acquired from the Indiana Pacers in January 2007? ",
+    question : "Who was NOT one of four the Golden State Warriors acquired from the Indiana Pacers in January 2007? ",
     answers  : [" Sarunas Jasikevicius", " Al Harrington", " Matt Barnes", " Stephen Jackson"],
     correct  : " Matt Barnes",
     image: "url"
